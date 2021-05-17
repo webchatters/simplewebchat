@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional 
+
+  var firebaseConfig = {
+    apiKey: "AIzaSyAVyawKSLQ2K7Sc84liEERd3XpQfh4_5GI",
+    authDomain: "simpledb-e21aa.firebaseapp.com",
+    databaseURL: "https://simpledb-e21aa-default-rtdb.firebaseio.com",
+    projectId: "simpledb-e21aa",
+    storageBucket: "simpledb-e21aa.appspot.com",
+    messagingSenderId: "187379523045",
+    appId: "1:187379523045:web:e349a94e7ea4cca610630c",
+    measurementId: "G-N46TLM8H82"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+ var myName=prompt("Enter your name");
+ 
+  // Initialize Firebase
+ 
+//   firebase.analytics();
+  function sri()
+  {
+      var message=document.getElementById("pw").value;
+
+firebase.database().ref("messages").push().set({
+  "sender":myName,
+  "message":message
+});
+
+
+  }
+  
+ firebase.database().ref("messages").on("child_added",function(snapshot){
+var html="";
+
+html+=snapshot.val().sender +": " +snapshot.val().message;
+  html+="<br><br>";
+    document.getElementById("messages").innerHTML+=html;
+    
+ 
+    
+ });
+</script>
+<style>
+  @media screen and (max-width:768px)
+  {
+  #pw{
+    width: 260px;
+  }
+  img{
+    width: 300px;
+    height: 300px;
+  }
+  }
+</style>
+</head>
+<body>
+  <div id="messages" style="font-weight: bold;"></div>
+  <input type="text" id="pw" >&nbsp;&nbsp;&nbsp;<button onclick="sri()">Send</button>
+  
+  <center><img src="web-chat-flat-vector-icon_9206-43.jpg"></center>
+   
+<em>An anonymous end-to-end encrypted secure web application that you can use to share messages to your acquaintances and friends. Developed by taking into consideration the website security norms and strict precaution</em>
+   
+
+</body>
+</html>
