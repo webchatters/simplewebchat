@@ -46,8 +46,8 @@ firebase.database().ref("messages").push().set({
  firebase.database().ref("messages").on("child_added",function(snapshot){
 var html="";
 
-html+=snapshot.val().sender +": " +snapshot.val().message;
-  html+="<br><br>";
+
+html+="<h4>"+snapshot.val().sender +": " +snapshot.val().message+"</h4><br>";
     document.getElementById("messages").innerHTML+=html;
     
  
@@ -64,6 +64,9 @@ html+=snapshot.val().sender +": " +snapshot.val().message;
     width: 300px;
     height: 300px;
   }
+      h4{
+          background-color:lightgrey;
+      }
   }
 </style>
 </head>
