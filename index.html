@@ -47,7 +47,7 @@ firebase.database().ref("messages").push().set({
 var html="";
 
 
-html+="<h4>"+snapshot.val().sender +": " +snapshot.val().message+"</h4><br>";
+html+="<h4>"+snapshot.val().sender +": " +snapshot.val().message+"</h4>";
     document.getElementById("messages").innerHTML+=html;
     
  
