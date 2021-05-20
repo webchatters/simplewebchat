@@ -48,10 +48,10 @@ var html="";
 
 
 if(myName === snapshot.val().sender){
-    html+="<textarea class = 'sender' style='margin-left:200px;height:auto;width:auto;background-color:	#D3D3D3;border:1px solid black;display:block;border-radius:15px'>"+snapshot.val().sender +": " +snapshot.val().message+"</textarea><br>";
+    html+="<textarea class = 'sender' style='margin-left:200px;height:auto;width:auto;background-color:	#D3D3D3;display:block;'>"+snapshot.val().sender +": " +snapshot.val().message+"</textarea><br>";
 }
 else{
-  html+="<textarea class= 'recipient' style='margin-right:200px;height:auto;width:auto;background-color:	#D3D3D3;border:1px solid black;display:block;border-radius:15px'>"+snapshot.val().sender +": " +snapshot.val().message+"</textarea><br>";
+  html+="<textarea class= 'recipient' style='margin-right:200px;height:auto;width:auto;background-color:	#D3D3D3;display:block;'>"+snapshot.val().sender +": " +snapshot.val().message+"</textarea><br>";
 }
     document.getElementById("messages").innerHTML+=html;
     
