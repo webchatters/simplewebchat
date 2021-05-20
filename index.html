@@ -48,7 +48,7 @@ var html="";
 
 
 if(myName === snapshot.val().sender){
-    html+="<h4 class = 'sender' style='margin-left:240px'>"+snapshot.val().sender +": " +snapshot.val().message+"</h4>";
+    html+="<h4 class = 'sender' style='margin-left:260px'>"+snapshot.val().sender +": " +snapshot.val().message+"</h4>";
 }
 else{
   html+="<h4 class= 'recipient' style='margin-left:0px'>"+snapshot.val().sender +": " +snapshot.val().message+"</h4>";
